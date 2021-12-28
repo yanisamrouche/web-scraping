@@ -6,3 +6,4 @@ to practice my web-scraping skills i created a simple website that lists the top
 - for the database (local) : MySql <br/>
 # Commands
 -npm i express typeorm mysql puppeteer
+-run the server first with : node server.js
