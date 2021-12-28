@@ -12,23 +12,30 @@ function newElement(type, attrs={}){
     return el;
 }
 
-const influencers = [
-    {name: 'Cristiano Ronaldo', img: 'http://'},
-    {name: 'Justin Bieber', img: 'http://'},
-    {name: 'Ariana Grande', img: 'http://'},
-    {name: 'Selena Gomez', img: 'http://'}
-];
+async function loadInfluencers(){
+    const res = await fetch('http://localhost:8080/influencers');
+    const influencers = await res.json();
+    const container = document.querySelector('.container');
 
-const container = document.querySelector('.container');
-
-influencers.forEach(inf =>{
+    influencers.forEach(inf =>{
     
     const card = newElement('div', {class: 'card'});
-    const title = newElement('h4', {innerText: inf.name});
+    const name = newElement('h4', {innerText: inf.name});
+    const username = newElement('h4', {innerText: inf.username})
     const img = newElement('img', {src: inf.img});
+    const category = newElement('h4', {innerText: "category : "+inf.category});
+    const followers = newElement('h4', {innerText: "followers : "+inf.followers})
     
-    card.appendChild(title);
+    card.appendChild(name);
+    card.appendChild(username);
     card.appendChild(img);
+    card.appendChild(category);
+    card.appendChild(followers);
+    
 
     container.appendChild(card);
-});
+    });
+}
+
+loadInfluencers();
+
