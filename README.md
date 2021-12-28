@@ -5,5 +5,5 @@ to practice my web-scraping skills i created a simple website that lists the top
 - in the back-end : NodeJS and for the scraping tool i used 'puppeteer' which is a NodeJS library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol.
 - for the database (local) : MySql <br/>
 # Commands
--npm i express typeorm mysql puppeteer
+-npm i express typeorm mysql puppeteer <br/>
 -run the server first with : node server.js
